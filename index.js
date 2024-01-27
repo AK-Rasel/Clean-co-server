@@ -1,5 +1,5 @@
 const express = require("express");
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
 const app = express();
 const port = 5000;
@@ -39,6 +39,16 @@ async function run() {
       const result = await bookingCollection.insertOne(booking);
       res.send(result);
     });
+
+    // booking cancel
+    app.delete("/api/v1/user/booking-cancel/:bookingId", async (req, res) => {
+      const id = req.params.bookingId;
+      const quary = { _id: new ObjectId(id) };
+      const result = await bookingCollection.deleteOne(quary);
+      console.log(id);
+      res.send(result);
+    });
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log(
