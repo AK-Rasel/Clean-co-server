@@ -1,6 +1,7 @@
 const express = require("express");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
+const jwt = require("jsonwebtoken");
 const app = express();
 const port = 5000;
 
@@ -47,6 +48,10 @@ async function run() {
       const result = await bookingCollection.deleteOne(quary);
       console.log(id);
       res.send(result);
+    });
+    // jwt auth
+    app.post("/api/v1/auth/access-token", (req, res) => {
+      //create token and sebd to clint
     });
 
     // Send a ping to confirm a successful connection
