@@ -3,14 +3,8 @@ const { MongoClient, ServerApiVersion } = require("mongodb");
 require("dotenv").config();
 const app = express();
 const port = 5000;
-// console.log(process.env.SECRET_USER_NAME);
-// CleanCo
-// OpeQD6cCSyo9nL3q
 
 // db url
-
-// const uri =
-//   "mongodb+srv://<username>:<password>@cluster0.z9hqskk.mongodb.net/?retryWrites=true&w=majority";
 const uri = `mongodb+srv://${process.env.SECRET_USER_NAME}:${process.env.SECRET_PASS}@cluster0.z9hqskk.mongodb.net/CleanCo?retryWrites=true&w=majority`;
 //   connet mongodb fun
 const client = new MongoClient(uri, {
@@ -26,14 +20,14 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
     // collaction
-    // const servicesCollection = client.db("CleanCo").collection("services");
+    const servicesCollection = client.db("CleanCo").collection("services");
 
     // see mongodb
-    // app.get("/api/v1/services", async (req, res) => {
-    //   const cursor = servicesCollection.find();
-    //   const result = await cursor.toArray();
-    //   res.send(result);
-    // });
+    app.get("/api/v1/services", async (req, res) => {
+      const cursor = servicesCollection.find();
+      const result = await cursor.toArray();
+      res.send(result);
+    });
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
