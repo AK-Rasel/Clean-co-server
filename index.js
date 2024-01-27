@@ -4,6 +4,9 @@ require("dotenv").config();
 const app = express();
 const port = 5000;
 
+// data parser,{ata nadile data paua jabe na 🤘 importent 🤘}
+app.use(express.json());
+
 // db url
 const uri = `mongodb+srv://${process.env.SECRET_USER_NAME}:${process.env.SECRET_PASS}@cluster0.z9hqskk.mongodb.net/CleanCo?retryWrites=true&w=majority`;
 //   connet mongodb fun
@@ -21,6 +24,7 @@ async function run() {
     await client.connect();
     // collaction
     const servicesCollection = client.db("CleanCo").collection("services");
+    const bookingCollection = client.db("CleanCo").collection("bookings");
 
     // see mongodb
     app.get("/api/v1/services", async (req, res) => {
@@ -29,6 +33,12 @@ async function run() {
       res.send(result);
     });
 
+    // user booking
+    app.post("/api/v1/user/create-booking", async (req, res) => {
+      const booking = req.body;
+      const result = await bookingCollection.insertOne(booking);
+      res.send(result);
+    });
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log(
