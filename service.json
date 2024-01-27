@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Standard Cleaning",
+    "price": 50.0,
+    "features": [
+      "Thorough cleaning for your home",
+      "Dusting, vacuuming, mopping",
+      "Surface disinfection"
+    ]
+  },
+  {
+    "name": "Deep Cleaning",
+    "price": 80.0,
+    "features": [
+      "Intensive cleaning for hard-to-reach areas",
+      "Deep-seated dirt removal",
+      "Detailed cleaning of baseboards, appliances, and high-touch surfaces"
+    ]
+  },
+  {
+    "name": "Carpet Cleaning",
+    "price": 30.0,
+    "features": [
+      "Specialized cleaning for carpets and rugs",
+      "Stain removal",
+      "Utilizes professional-grade equipment and eco-friendly solutions"
+    ]
+  },
+  {
+    "name": "Window Cleaning",
+    "price": 40.0,
+    "features": [
+      "Streak-free shining of windows",
+      "Interior and exterior cleaning",
+      "Crystal-clear view"
+    ]
+  },
+  {
+    "name": "Office Cleaning",
+    "price": 60.0,
+    "features": [
+      "Tailored cleaning for offices",
+      "Hygienic and productive work environment",
+      "Desk cleaning, trash removal, and common area sanitization"
+    ]
+  },
+  {
+    "name": "Green Cleaning",
+    "price": 55.0,
+    "features": [
+      "Eco-friendly cleaning service",
+      "Sustainable and non-toxic cleaning products",
+      "Promotes a healthier environment"
+    ]
+  }
+]
