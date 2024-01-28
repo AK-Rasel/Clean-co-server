@@ -2,11 +2,14 @@ const express = require("express");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
 const app = express();
 const port = 5000;
+const secret = process.env.SECRET_SECNECHUR;
 
 // data parser,{ata nadile data paua jabe na 🤘 importent 🤘}
 app.use(express.json());
+app.use(cookieParser());
 
 // db url
 const uri = `mongodb+srv://${process.env.SECRET_USER_NAME}:${process.env.SECRET_PASS}@cluster0.z9hqskk.mongodb.net/CleanCo?retryWrites=true&w=majority`;
@@ -27,8 +30,27 @@ async function run() {
     const servicesCollection = client.db("CleanCo").collection("services");
     const bookingCollection = client.db("CleanCo").collection("bookings");
 
+    // gateMan
+    const getMan = (req, res, next) => {
+      const { token } = req.cookies;
+      // console.log(token);
+      if (!token) {
+        return res.status(401).send({ message: "Your are not Authorized" });
+      }
+
+      // verify a token symmetric
+      jwt.verify(token, secret, function (err, decoded) {
+        // console.log(decoded.foo); // bar
+        if (err) {
+          return res.status(401).send({ message: "Your are not Authorized" });
+        }
+        console.log(decoded);
+        next();
+      });
+    };
+
     // see mongodb
-    app.get("/api/v1/services", async (req, res) => {
+    app.get("/api/v1/services", getMan, async (req, res) => {
       const cursor = servicesCollection.find();
       const result = await cursor.toArray();
       res.send(result);
@@ -49,9 +71,20 @@ async function run() {
       console.log(id);
       res.send(result);
     });
+
     // jwt auth
     app.post("/api/v1/auth/access-token", (req, res) => {
-      //create token and sebd to clint
+      //create token and send to clint
+      const user = req.body;
+      const token = jwt.sign(user, secret, { expiresIn: 60 * 60 });
+      // console.log(token);
+      res
+        .cookie("token", token, {
+          httpOnly: true,
+          secure: false,
+          sameSite: "none",
+        })
+        .send({ success: "true" });
     });
 
     // Send a ping to confirm a successful connection
