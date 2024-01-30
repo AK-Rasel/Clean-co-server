@@ -3,6 +3,7 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 const app = express();
 const port = 5000;
 const secret = process.env.SECRET_SECNECHUR;
@@ -10,6 +11,12 @@ const secret = process.env.SECRET_SECNECHUR;
 // data parser,{ata nadile data paua jabe na 🤘 importent 🤘}
 app.use(express.json());
 app.use(cookieParser());
+app.use(
+  cors({
+    origin: "localhost:5173",
+    credentials: true,
+  })
+);
 
 // db url
 const uri = `mongodb+srv://${process.env.SECRET_USER_NAME}:${process.env.SECRET_PASS}@cluster0.z9hqskk.mongodb.net/CleanCo?retryWrites=true&w=majority`;
@@ -44,8 +51,10 @@ async function run() {
         if (err) {
           return res.status(401).send({ message: "Your are not Authorized" });
         }
-        console.log(decoded);
-        next();
+        // attast req decoded  file✨
+        req.user = decoded;
+        // console.log(decoded);
+        next(); //next na korke poroborte te jabe na 🤘inportent🤘
       });
     };
 
@@ -61,6 +70,25 @@ async function run() {
       const booking = req.body;
       const result = await bookingCollection.insertOne(booking);
       res.send(result);
+    });
+    // user specific  booking✨ kal ke recape kor te hobe
+    app.get("/api/v1/user/bookings", getMan, async (req, res) => {
+      const queryEmail = req.query.email;
+      const tokenEmail = req.user.email;
+      // agei chack korbo yumi valied ki na
+      if (queryEmail !== tokenEmail) {
+        return req.status(403).send({ message: "forbidden Access" });
+      }
+      let query = {};
+      if (queryEmail) {
+        query.email = queryEmail;
+      }
+      const reuslt = await bookingCollection.find(query).toArray();
+      res.send(reuslt);
+      // if (queryEmail === tokenEmail) {
+      //   const result = await bookingCollection.findOne({ email: queryEmail });
+      //   res.send(result);
+      // }
     });
 
     // booking cancel
