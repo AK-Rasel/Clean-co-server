@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "localhost:5173",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
@@ -100,16 +100,17 @@ async function run() {
       res.send(result);
     });
 
-    // jwt auth
+    // jwt auth💕
     app.post("/api/v1/auth/access-token", (req, res) => {
       //create token and send to clint
       const user = req.body;
-      const token = jwt.sign(user, secret, { expiresIn: 60 * 60 });
+      console.log(user);
+      const token = jwt.sign(user, secret);
       // console.log(token);
       res
         .cookie("token", token, {
           httpOnly: true,
-          secure: false,
+          secure: true,
           sameSite: "none",
         })
         .send({ success: "true" });
