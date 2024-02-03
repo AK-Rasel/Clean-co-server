@@ -59,10 +59,45 @@ async function run() {
     };
 
     // see mongodb
-    app.get("/api/v1/services", getMan, async (req, res) => {
-      const cursor = servicesCollection.find();
+    // sort-asc :  http://localhost:5000/api/v1/services?sortField=price&sortOrder=asc
+    // sort-desc :  http://localhost:5000/api/v1/services?sortField=price&sortOrder=desc
+    // sort-filter:  http://localhost:5000/api/v1/services?category=General
+    // All-data :  http://localhost:5000/api/v1/services
+    // pagination :  http://localhost:5000/api/v1/services?page=1&limit=10
+
+    // all service / short/filter
+    app.get("/api/v1/services", async (req, res) => {
+      const category = req.query.category;
+      // sort
+      const sortField = req.query.sortField; //price
+      const sortOrder = req.query.sortOrder; // asc
+      console.log("filed", sortField);
+      console.log("ORDER", sortOrder);
+      let queryObj = {};
+      let sortObj = {};
+      // category
+      if (category) {
+        queryObj.category = req.query.category;
+      }
+      // sort
+      if (sortField && sortOrder) {
+        sortObj[sortField] = sortOrder; // {price: asc} set kora hoase
+      }
+      // pagination
+      const page = Number(req.query.page);
+      const limit = Number(req.query.limit);
+      const skip = (page - 1) * limit;
+      // came to mongodb data💋
+      const cursor = servicesCollection
+        .find(queryObj)
+        .skip(skip)
+        .limit(limit)
+        .sort(sortObj);
+
       const result = await cursor.toArray();
       res.send(result);
+      // console.log("---->", sortObj);
+      // count data ⭐⭐🌞🌜
     });
 
     // user booking

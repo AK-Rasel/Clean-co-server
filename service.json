@@ -2,55 +2,67 @@
   {
     "name": "Standard Cleaning",
     "price": 50.0,
+    "description": "A comprehensive cleaning service for your home, covering all essential areas and surfaces.",
     "features": [
       "Thorough cleaning for your home",
       "Dusting, vacuuming, mopping",
       "Surface disinfection"
-    ]
+    ],
+    "category": "General"
   },
   {
     "name": "Deep Cleaning",
     "price": 80.0,
+    "description": "An intensive cleaning service targeting hard-to-reach areas and deep-seated dirt.",
     "features": [
       "Intensive cleaning for hard-to-reach areas",
       "Deep-seated dirt removal",
       "Detailed cleaning of baseboards, appliances, and high-touch surfaces"
-    ]
+    ],
+    "category": "Intensive"
   },
   {
     "name": "Carpet Cleaning",
     "price": 30.0,
+    "description": "Specialized cleaning for carpets and rugs, restoring freshness and removing stains.",
     "features": [
       "Specialized cleaning for carpets and rugs",
       "Stain removal",
       "Utilizes professional-grade equipment and eco-friendly solutions"
-    ]
+    ],
+    "category": "Specialized"
   },
   {
     "name": "Window Cleaning",
     "price": 40.0,
+    "description": "A service focused on cleaning and streak-free shining of windows for a crystal-clear view.",
     "features": [
       "Streak-free shining of windows",
       "Interior and exterior cleaning",
       "Crystal-clear view"
-    ]
+    ],
+    "category": "Window"
   },
   {
     "name": "Office Cleaning",
     "price": 60.0,
+    "description": "Tailored cleaning solutions for offices, creating a hygienic and productive work environment.",
     "features": [
       "Tailored cleaning for offices",
       "Hygienic and productive work environment",
       "Desk cleaning, trash removal, and common area sanitization"
-    ]
+    ],
+    "category": "Office"
   },
   {
     "name": "Green Cleaning",
     "price": 55.0,
+    "description": "An eco-friendly cleaning service using sustainable and non-toxic cleaning products.",
     "features": [
       "Eco-friendly cleaning service",
       "Sustainable and non-toxic cleaning products",
       "Promotes a healthier environment"
-    ]
+    ],
+    "category": "Eco-friendly"
   }
 ]
