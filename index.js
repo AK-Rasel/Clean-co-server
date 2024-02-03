@@ -95,9 +95,10 @@ async function run() {
         .sort(sortObj);
 
       const result = await cursor.toArray();
-      res.send(result);
-      // console.log("---->", sortObj);
       // count data ⭐⭐🌞🌜
+      const total = await servicesCollection.countDocuments();
+      res.send({ total, result });
+      // console.log("---->", sortObj);
     });
 
     // user booking
