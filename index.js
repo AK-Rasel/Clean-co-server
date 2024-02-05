@@ -66,13 +66,13 @@ async function run() {
     // pagination :  http://localhost:5000/api/v1/services?page=1&limit=10
 
     // all service / short/filter
-    app.get("/api/v1/services", async (req, res) => {
+    app.get("/api/v1/services", getMan, async (req, res) => {
       const category = req.query.category;
       // sort
       const sortField = req.query.sortField; //price
       const sortOrder = req.query.sortOrder; // asc
-      console.log("filed", sortField);
-      console.log("ORDER", sortOrder);
+      // console.log("filed", sortField);
+      // console.log("ORDER", sortOrder);
       let queryObj = {};
       let sortObj = {};
       // category
@@ -119,8 +119,8 @@ async function run() {
       if (queryEmail) {
         query.email = queryEmail;
       }
-      const reuslt = await bookingCollection.find(query).toArray();
-      res.send(reuslt);
+      const result = await bookingCollection.find(query).toArray();
+      res.send(result);
       // if (queryEmail === tokenEmail) {
       //   const result = await bookingCollection.findOne({ email: queryEmail });
       //   res.send(result);
@@ -130,9 +130,17 @@ async function run() {
     // booking cancel
     app.delete("/api/v1/user/booking-cancel/:bookingId", async (req, res) => {
       const id = req.params.bookingId;
-      const quary = { _id: new ObjectId(id) };
-      const result = await bookingCollection.deleteOne(quary);
+      const query = { _id: new ObjectId(id) };
+      const result = await bookingCollection.deleteOne(query);
       console.log(id);
+      res.send(result);
+    });
+    // service id
+    app.get("/api/v1/service/:serviceId", async (req, res) => {
+      const id = req.params.serviceId;
+      const quary = { _id: new ObjectId(id) };
+      const result = await servicesCollection.findOne(quary);
+      // console.log(id);
       res.send(result);
     });
 
@@ -141,7 +149,7 @@ async function run() {
       //create token and send to clint
       const user = req.body;
       console.log(user);
-      const token = jwt.sign(user, secret);
+      const token = jwt.sign(user, secret, { expiresIn: "1h" });
       // console.log(token);
       res
         .cookie("token", token, {

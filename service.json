@@ -64,5 +64,285 @@
       "Promotes a healthier environment"
     ],
     "category": "Eco-friendly"
+  },
+
+  {
+    "name": "Express Cleaning",
+    "price": 40.0,
+    "description": "Quick and efficient cleaning service for those on a tight schedule.",
+    "features": [
+      "Fast cleaning for your home",
+      "Basic dusting and vacuuming",
+      "Quick surface disinfection"
+    ],
+    "category": "General"
+  },
+  {
+    "name": "Weekly Maintenance",
+    "price": 65.0,
+    "description": "Regular weekly cleaning to maintain a consistently clean and organized living space.",
+    "features": [
+      "Weekly home cleaning services",
+      "Dusting, vacuuming, and mopping",
+      "Surface disinfection"
+    ],
+    "category": "General"
+  },
+  {
+    "name": "Pet Hair Removal",
+    "price": 45.0,
+    "description": "Specialized cleaning for homes with pets, focusing on removing pet hair and dander.",
+    "features": [
+      "Pet-friendly cleaning services",
+      "Effective pet hair removal",
+      "Sanitization for pet-related areas"
+    ],
+    "category": "General"
+  },
+  {
+    "name": "Odor Neutralization",
+    "price": 55.0,
+    "description": "Cleaning services designed to neutralize and eliminate unpleasant odors in your home.",
+    "features": [
+      "Effective odor-neutralizing techniques",
+      "Fresh and pleasant-smelling spaces",
+      "Sanitization for odor-prone areas"
+    ],
+    "category": "General"
+  },
+  {
+    "name": "Elderly Assistance",
+    "price": 70.0,
+    "description": "Cleaning services with a focus on assisting elderly individuals in maintaining a clean and safe home.",
+    "features": [
+      "Gentle and supportive cleaning",
+      "Assistance with organizing and decluttering",
+      "Specialized care for elderly living spaces"
+    ],
+    "category": "General"
+  },
+
+  {
+    "name": "Extreme Deep Clean",
+    "price": 100.0,
+    "description": "A thorough and extreme deep cleaning service for a complete transformation of your living space.",
+    "features": [
+      "Comprehensive cleaning for all areas",
+      "Deep-seated dirt and grime removal",
+      "Detailed cleaning of every surface"
+    ],
+    "category": "Intensive"
+  },
+  {
+    "name": "Appliance Overhaul",
+    "price": 90.0,
+    "description": "Intensive cleaning and detailing of all household appliances for optimal functionality.",
+    "features": [
+      "Deep cleaning of all appliances",
+      "Internal and external detailing",
+      "Enhanced performance and longevity"
+    ],
+    "category": "Intensive"
+  },
+  {
+    "name": "Construction Cleanup",
+    "price": 120.0,
+    "description": "Post-construction cleaning to remove debris, dust, and construction residue from your home.",
+    "features": [
+      "Thorough cleaning after construction",
+      "Debris removal and disposal",
+      "Final touch-ups for a polished look"
+    ],
+    "category": "Intensive"
+  },
+  {
+    "name": "Mold and Mildew Remediation",
+    "price": 85.0,
+    "description": "Specialized cleaning to remove and prevent the growth of mold and mildew in your living spaces.",
+    "features": [
+      "Effective mold and mildew removal",
+      "Preventive measures for future growth",
+      "Sanitization for a healthy environment"
+    ],
+    "category": "Intensive"
+  },
+  {
+    "name": "Hoarding Cleanup",
+    "price": 150.0,
+    "description": "Specialized cleaning services for hoarding situations, providing support and a clean living space.",
+    "features": [
+      "Sensitive and respectful hoarding cleanup",
+      "Organization and decluttering",
+      "Emotional support throughout the process"
+    ],
+    "category": "Intensive"
+  },
+
+  {
+    "name": "Antique Furniture Restoration",
+    "price": 90.0,
+    "description": "Specialized cleaning and restoration services for antique furniture pieces.",
+    "features": [
+      "Gentle cleaning for antique furniture",
+      "Restoration of original finishes",
+      "Preservation for long-lasting beauty"
+    ],
+    "category": "Specialized"
+  },
+  {
+    "name": "Electronics Cleaning",
+    "price": 50.0,
+    "description": "Cleaning services focused on electronic devices, ensuring a dust-free and optimal performance.",
+    "features": [
+      "Gentle cleaning for tech devices",
+      "Dust and debris removal",
+      "Enhanced device performance"
+    ],
+    "category": "Specialized"
+  },
+  {
+    "name": "Artwork and Sculpture Care",
+    "price": 80.0,
+    "description": "Specialized cleaning and care for artwork and sculptures to maintain their beauty and integrity.",
+    "features": [
+      "Careful cleaning for delicate artwork",
+      "Preservation of artistic details",
+      "Condition assessment and maintenance"
+    ],
+    "category": "Specialized"
+  },
+  {
+    "name": "Leather Upholstery Cleaning",
+    "price": 65.0,
+    "description": "Specialized cleaning for leather upholstery, preserving its texture and appearance.",
+    "features": [
+      "Gentle cleaning for leather furniture",
+      "Conditioning and moisturizing",
+      "Stain removal for a refreshed look"
+    ],
+    "category": "Specialized"
+  },
+  {
+    "name": "Jewelry Cleaning",
+    "price": 40.0,
+    "description": "Specialized cleaning services for jewelry items, restoring their shine and luster.",
+    "features": [
+      "Delicate cleaning for jewelry pieces",
+      "Removal of tarnish and residue",
+      "Polishing for a sparkling finish"
+    ],
+    "category": "Specialized"
+  },
+
+  {
+    "name": "High-Rise Window Cleaning",
+    "price": 120.0,
+    "description": "Specialized window cleaning services for high-rise buildings, ensuring sparkling windows with safety measures.",
+    "features": [
+      "Professional window cleaning for tall structures",
+      "Exterior and interior window cleaning",
+      "Safety measures for high-rise locations"
+    ],
+    "category": "Window"
+  },
+  {
+    "name": "Seasonal Window Washing",
+    "price": 70.0,
+    "description": "Regular window cleaning services tailored for each season to keep your windows crystal clear year-round.",
+    "features": [
+      "Season-specific window washing",
+      "Sill and frame cleaning",
+      "Streak-free shine for every season"
+    ],
+    "category": "Window"
+  },
+  {
+    "name": "Skylight Cleaning",
+    "price": 50.0,
+    "description": "Specialized cleaning for skylights, ensuring maximum natural light and clarity.",
+    "features": [
+      "Gentle cleaning for skylights",
+      "Removal of dirt and debris",
+      "Enhanced natural light in interior spaces"
+    ],
+    "category": "Window"
+  },
+  {
+    "name": "Solar Panel Cleaning",
+    "price": 80.0,
+    "description": "Cleaning services designed to enhance the efficiency of solar panels by removing dirt and dust accumulation.",
+    "features": [
+      "Cleaning for solar panels",
+      "Dust and debris removal",
+      "Maximization of solar energy absorption"
+    ],
+    "category": "Window"
+  },
+  {
+    "name": "Historic Window Restoration",
+    "price": 100.0,
+    "description": "Specialized restoration services for historic windows, preserving their architectural significance.",
+    "features": [
+      "Restoration of historic windows",
+      "Preservation of original features",
+      "Enhancement of architectural value"
+    ],
+    "category": "Window"
+  },
+
+  {
+    "name": "Conference Room Cleanup",
+    "price": 55.0,
+    "description": "Cleaning services focused on conference rooms, ensuring a professional and welcoming space for meetings.",
+    "features": [
+      "Cleaning and organization for conference rooms",
+      "Trash removal and sanitization",
+      "Preparation for successful meetings"
+    ],
+    "category": "Office"
+  },
+  {
+    "name": "Desk Organization",
+    "price": 40.0,
+    "description": "Organizational services focused on desks, optimizing workspace efficiency and cleanliness.",
+    "features": [
+      "Desk organization and decluttering",
+      "Paper and document management",
+      "Enhanced productivity and focus"
+    ],
+    "category": "Office"
+  },
+  {
+    "name": "Break Room Maintenance",
+    "price": 65.0,
+    "description": "Cleaning and maintenance services for office break rooms, creating a comfortable space for relaxation.",
+    "features": [
+      "Break room cleaning and organization",
+      "Appliance and surface maintenance",
+      "Refreshed and inviting break room"
+    ],
+    "category": "Office"
+  },
+  {
+    "name": "Office Plant Care",
+    "price": 45.0,
+    "description": "Specialized care for office plants, ensuring a healthy and vibrant green environment.",
+    "features": [
+      "Plant watering and care",
+      "Dusting and leaf cleaning",
+      "Promotion of a green and lively office space"
+    ],
+    "category": "Office"
+  },
+  {
+    "name": "Corporate Event Cleanup",
+    "price": 90.0,
+    "description": "Cleaning services for corporate events, ensuring a clean and organized venue during and after events.",
+    "features": [
+      "Event venue cleaning and organization",
+      "Trash removal and floor maintenance",
+      "Professional and polished event spaces"
+    ],
+    "category": "Office"
   }
 ]
